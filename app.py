@@ -3,6 +3,10 @@ import sqlite3
 
 app = Flask(__name__)
 
+@app.route("/")
+def index():
+    return render_template("index.html")
+
 @app.route("/signup", methods=['GET','POST'])
 def signup():
     if request.method == 'POST':
