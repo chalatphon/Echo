@@ -2,6 +2,7 @@ from flask import Flask,render_template,request,redirect,url_for,session
 import sqlite3
 
 app = Flask(__name__)
+app.secret_key = "hello"
 
 @app.route("/")
 def index():
@@ -38,14 +39,28 @@ def signin():
         cursor.execute(query)
         result = cursor.fetchall()
         if len(result) == 0:
-            print("Incorrect Password")
+            return redirect(url_for('signin'))
         else:
+            session["user"] = email
+            return redirect(url_for('dashboard'))
+    else:
+        if "user" in session:
             return redirect(url_for('dashboard'))
     return render_template('signin.html')
 
 @app.route("/dashboard")
 def dashboard():
-    return render_template('dashboard.html')
+    if "user" in session:
+        return render_template('dashboard.html')
+    else:
+        return redirect(url_for('signin'))
+
+
+@app.route("/logout")
+def logout():
+    # เคลีย session
+    session.pop('user',None)
+    return redirect(url_for('signin'))
 
 if __name__ == "__main__":
     app.run(debug=True)
