@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request,redirect,url_for
+from flask import Flask,render_template,request,redirect,url_for,session
 import sqlite3
 
 app = Flask(__name__)
@@ -40,7 +40,7 @@ def signin():
         if len(result) == 0:
             print("Incorrect Password")
         else:
-            return render_template('dashboard.html',data=email)
+            return redirect(url_for('dashboard'))
     return render_template('signin.html')
 
 if __name__ == "__main__":
