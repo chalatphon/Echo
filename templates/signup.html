@@ -17,7 +17,7 @@
         <!--display mid- xl -->
         <div class="container d-sm-none d-none d-md-block">
             <div class="center">
-                <div class="box row">
+                <div class=" row d-flex align-items-center box-signup">
                     <form action="{{url_for('signup')}}" method="POST">
                         <h3>Create New account?</h3>
                         <div class="row m-1">
@@ -36,6 +36,11 @@
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                        </div>
+                        <div class="form-group m-3">
+                            <label for="exampleInputEmail1">User name</label>
+                            <input class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter User name" name="user">
                         </div>
                         <div class="form-group m-3">
                             <label for="exampleInputPassword1">Password</label>
@@ -77,6 +82,11 @@
                             <label for="exampleInputEmail1">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
                                 aria-describedby="emailHelp" placeholder="Enter email" name="email">
+                        </div>
+                        <div class="form-group m-3">
+                            <label for="exampleInputEmail1">User name</label>
+                            <input class="form-control" id="exampleInputEmail1"
+                                aria-describedby="emailHelp" placeholder="Enter User name" name="user">
                         </div>
                         <div class="form-group m-3">
                             <label for="exampleInputPassword1">Password</label>
