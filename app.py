@@ -15,13 +15,14 @@ def signup():
         fname = request.form['fname']
         lname = request.form['lname']
         email = request.form['email']
+        username = request.form['username']
         password = request.form['password']
         c_password = request.form['c_password']
         # เก็บใน databaase
         if password == c_password:
             connect = sqlite3.connect('echo.db')
             cursor = connect.cursor()
-            cursor.execute(f"insert into member(fname,lname,email,password) values('{fname}','{lname}','{email}','{password}')")
+            cursor.execute(f"insert into member(fname,lname,email,username,password) values('{fname}','{lname}','{email}','{username}','{password}')")
             connect.commit()
             connect.close()
             return redirect(url_for('signin'))
@@ -33,15 +34,15 @@ def signin():
     if request.method == "POST":
         connection = sqlite3.connect('echo.db')
         cursor = connection.cursor()
-        email = request.form['email']
+        username = request.form['username']
         password = request.form['password']
-        query = f"select email,password from member where email= '{email}' and password='{password}'"
+        query = f"select username,password from member where username= '{username}' and password='{password}'"
         cursor.execute(query)
         result = cursor.fetchall()
         if len(result) == 0:
             return redirect(url_for('signin'))
         else:
-            session["user"] = email
+            session["user"] = username
             return redirect(url_for('dashboard'))
     else:
         if "user" in session:
