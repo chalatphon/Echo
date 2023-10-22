@@ -7,6 +7,18 @@
 </head>
 <body>
     <h1> Welcome !!</h1>
+    {% for i in data %}
+    id : {{i[0]}}
+    <hr>
+    firstname : {{i[1]}}
+    <hr>
+    lastname : {{i[2]}}
+    <hr>
+    email : {{i[3]}}
+    <hr>
+    username : {{i[4]}}
+    {% endfor %}
+    <hr>
     <a href="{{url_for('logout')}}">Logout</a>
 </body>
 </html>

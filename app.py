@@ -52,7 +52,12 @@ def signin():
 @app.route("/dashboard")
 def dashboard():
     if "user" in session:
-        return render_template('dashboard.html')
+        username = session["user"]
+        connection = sqlite3.connect('echo.db')
+        cursor = connection.cursor()
+        cursor.execute(f"select * from member where username = '{username}'")
+        showdata = cursor.fetchall()
+        return render_template('dashboard.html',data=showdata)
     else:
         return redirect(url_for('signin'))
 
