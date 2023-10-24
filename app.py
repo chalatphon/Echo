@@ -22,7 +22,7 @@ def signup():
         if password == c_password:
             connect = sqlite3.connect('echo.db')
             cursor = connect.cursor()
-            cursor.execute(f"insert into member(fname,lname,email,username,password) values('{fname}','{lname}','{email}','{username}','{password}')")
+            cursor.execute(f"insert into members(fname,lname,email,username,password) values('{fname}','{lname}','{email}','{username}','{password}')")
             connect.commit()
             connect.close()
             return redirect(url_for('signin'))
@@ -36,7 +36,7 @@ def signin():
         cursor = connection.cursor()
         username = request.form['username']
         password = request.form['password']
-        query = f"select username,password from member where username= '{username}' and password='{password}'"
+        query = f"select username,password from members where username= '{username}' and password='{password}'"
         cursor.execute(query)
         result = cursor.fetchall()
         if len(result) == 0:
@@ -53,11 +53,7 @@ def signin():
 def dashboard():
     if "user" in session:
         username = session["user"]
-        connection = sqlite3.connect('echo.db')
-        cursor = connection.cursor()
-        cursor.execute(f"select * from member where username = '{username}'")
-        showdata = cursor.fetchall()
-        return render_template('dashboard.html',data=showdata)
+        return render_template('dashboard.html',data=username)
     else:
         return redirect(url_for('signin'))
 
