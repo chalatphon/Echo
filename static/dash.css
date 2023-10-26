@@ -46,3 +46,10 @@ body{
     border: solid black;
     border-width: 20px;
 }
+.zdex{
+    z-index: 1;
+}
+.sign-out{
+    text-decoration: none;
+    color: #3a3a3a;
+}
