@@ -81,7 +81,7 @@
     border-radius: 10px; 
 }
 .border-white{
-    border-color: #fefefe;
+    border-color: rgb(255, 255, 255,0.3);
 }
 .mini-center{
     display: flex;
