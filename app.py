@@ -64,5 +64,10 @@ def logout():
     session.pop('user',None)
     return redirect(url_for('signin'))
 
+@app.route("/calendar")
+def calendar():
+    return render_template("calendar.html")
+        
+
 if __name__ == "__main__":
     app.run(debug=True)
