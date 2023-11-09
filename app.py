@@ -66,12 +66,19 @@ def logout():
 
 @app.route("/calendar")
 def calendar():
-    return render_template("calendar.html")
+    if "user" in session:
+        username = session["user"]
+        return render_template("calendar.html")
+    else:
+        return redirect(url_for('signin'))
 
 @app.route("/input")
 def input():
-    return render_template("input.html")
-        
+    if "user" in session:
+        username = session["user"]
+        return render_template("input.html")
+    else:
+        return redirect(url_for('signin'))
 
 if __name__ == "__main__":
     app.run(debug=True)
