@@ -67,6 +67,10 @@ def logout():
 @app.route("/calendar")
 def calendar():
     return render_template("calendar.html")
+
+@app.route("/input")
+def input():
+    return render_template("input.html")
         
 
 if __name__ == "__main__":

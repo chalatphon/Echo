@@ -10,6 +10,7 @@ body{
 }
 .box-relative{
     position: relative;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 .box-absolute{
     position: absolute;
@@ -20,12 +21,7 @@ body{
     border-style:solid ;
 }
 
-.box-solid{
-    background-color: rgb(244, 244, 244);
-    border-style: solid;
-    border-color:rgb(244, 244, 244) ;
-    border-width: 7px;
-}
+
 .bar{
     height: 50px;
     width:100%;
