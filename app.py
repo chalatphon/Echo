@@ -80,5 +80,13 @@ def input():
     else:
         return redirect(url_for('signin'))
 
+@app.route("/about")
+def about():
+    if "user" in session:
+        username = session["user"]
+        return render_template("about.html")
+    else:
+        return redirect(url_for('signin'))
+
 if __name__ == "__main__":
     app.run(debug=True)
