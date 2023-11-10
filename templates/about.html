@@ -18,8 +18,8 @@ body {font-family: "Lato", sans-serif}
 <div class="w3-top">
   <div class="w3-bar w3-white w3-card">
     <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="#" class="w3-bar-item w3-button w3-padding-large">Dashboard</a>
-    <a href="#Calendar" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Calendar</a>
+    <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button w3-padding-large">Dashboard</a>
+    <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Calendar</a>
     <a href="#Profile" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Profile</a>
     <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
   </div>
@@ -27,8 +27,8 @@ body {font-family: "Lato", sans-serif}
 
 <!-- navigation bar on small screens -->
 <div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
-  <a href="#dashboard" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Dashboard</a>
-  <a href="#calendar" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Calendar</a>
+  <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Dashboard</a>
+  <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Calendar</a>
   <a href="#profile" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Profile</a>
 </div>
 
