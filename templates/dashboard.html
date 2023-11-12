@@ -19,11 +19,11 @@
                 <div class="d-flex box-absolute">
                     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
                         <h1 class="w3-bar-item">Menu {{data}}</h1>
-                        <h3 class="w3-bar-item">Task</h3>
+                        <h3 class="w3-bar-item ms-4">Task</h3>
                         <ul>
-                            <a href="#" class="w3-bar-item w3-button">Today</a>
+                            <a href="#" class="w3-bar-item w3-button" style="background-color: #d3d1d1;">Today</a>
                             <a href="#" class="w3-bar-item w3-button">Calendar</a>
-                            <a href="{{url_for('logout')}}" class="w3-bar-item w3-button">About</a>
+                            <a href="{{url_for('about')}}" class="w3-bar-item w3-button">About</a>
                         </ul>
                     </div>
                 </div>
@@ -43,17 +43,36 @@
                     <div class="col-md-12 w-100 ms-1 p-0 t">
                         <button class="bar btn-A ">50%</button>
                     </div>
+                    
                     <div class="col-md-8 ms-1">
                         <h2 class="ms-5 mt-5">Today</h2>
                     </div>
+                    <div class="col-md-12">
+                        <h3>hello</h3>
+                    </div>
+                    <div id="event">
+                        <h3>Add event</h3>
+                        <form>
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">date</label>
+                                <input type="date" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    placeholder="Enter email">
+                            </div>
+                            <div class="form-group">
+                                <label for="exampleInputPassword1">event</label>
+                                <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            </div>
+                            <button type="submit" class="btn btn-success mt-3">Submit</button>
+                        </form>
+                    </div>
                     <div class="col-md-12 text-end">
-                        <a href="{{url_for('input')}}" class="me-3">
+                        <button onclick="myFunction1()" class="me-3" style="background-color: #fefefe; border: none;">
                             <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
                             <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
                             <lord-icon src="https://cdn.lordicon.com/zrkkrrpl.json" trigger="loop" delay="2000"
                                 style="width:50px;height:50px">
                             </lord-icon>
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -61,8 +80,26 @@
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
 
 </body>
-
+<script>
+    function myFunction() {
+        var routine = document.getElementById("routine");
+        if (routine.style.display === "none") {
+            routine.style.display = "block";
+        } else {
+            routine.style.display = "none";
+        }
+    }
+    function myFunction1() {
+        var event = document.getElementById("event");
+        if (event.style.display === "none") {
+            event.style.display = "block";
+        } else {
+            event.style.display = "none";
+        }
+    }
+</script>
 </html>
