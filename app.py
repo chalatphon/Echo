@@ -70,7 +70,11 @@ def logout():
 def calendar():
     if "user" in session:
         username = session["user"]
-        return render_template("calendar.html")
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        cursor.execute(f"select date,event from {username}")
+        events = cursor.fetchall()
+        return render_template("calendar.html", events=events)
     else:
         return redirect(url_for('signin'))
 
