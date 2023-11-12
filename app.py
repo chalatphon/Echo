@@ -24,6 +24,8 @@ def signup():
             cursor = connect.cursor()
             cursor.execute(f"insert into members(fname,lname,email,username,password) values('{fname}','{lname}','{email}','{username}','{password}')")
             connect.commit()
+            cursor.execute(f"create table {username} ('date'text,'event'text, 'status' INTEGER DEFAULT 0);")
+            connect.commit()
             connect.close()
             return redirect(url_for('signin'))
         # else --> ถ้าเกิด password กับ confirm-password ไม่ตรงกันให้ทำอะไร
@@ -87,6 +89,9 @@ def about():
         return render_template("about.html")
     else:
         return redirect(url_for('signin'))
+    
+
+            
 
 if __name__ == "__main__":
     app.run(debug=True)
