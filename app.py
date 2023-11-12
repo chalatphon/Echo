@@ -89,9 +89,20 @@ def about():
         return render_template("about.html")
     else:
         return redirect(url_for('signin'))
-    
 
-            
+@app.route("/insert", methods=['GET','POST'])
+def insert():
+    if "user" in session:
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        username = session["user"]
+        if request.method == "POST":
+            date = request.form["date"]
+            event = request.form["event"]
+            cursor.execute(f"insert into {username}(date, event)values('{date}','{event}')")
+            connect.commit()
+            connect.close()
+            return redirect(url_for('dashboard'))
 
 if __name__ == "__main__":
     app.run(debug=True)
