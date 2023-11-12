@@ -35,22 +35,6 @@ body {font-family: "Lato", sans-serif}
 <!-- content -->
 <div class="w3-content" style="max-width:2000px;margin-top:46px">
 
-  <!-- slideshows (unfinished) -->
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/static/members/groupphoto1.png" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Lost in the moment</h3>
-      <p><b>bro throw a question at me so I threw it back</b></p>   
-    </div>
-  </div>
-  <div class="mySlides w3-display-container w3-center">
-    <img src="/static/members/groupphoto2.png" style="width:100%">
-    <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
-      <h3>Student ID moment</h3>
-      <p><b>nah shit was too cursed</b></p>    
-    </div>
-  </div>
-
   <!-- about section (unfinished) -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
     <h2 class="w3-wide">About Us</h2>
@@ -83,27 +67,28 @@ body {font-family: "Lato", sans-serif}
     </div>
   </div>
 
+    <!-- slideshows (unfinished) -->
+    <div class="mySlides w3-display-container w3-center">
+      <img src="/static/members/groupphoto1.png" style="width:100%">
+      <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3>Lost in the moment</h3>
+        <p><b>bro throw a question at me so I threw it back</b></p>   
+      </div>
+    </div>
+    <div class="mySlides w3-display-container w3-center">
+      <img src="/static/members/groupphoto2.png" style="width:100%">
+      <div class="w3-display-bottommiddle w3-container w3-text-white w3-padding-32 w3-hide-small">
+        <h3>Student ID moment</h3>
+        <p><b>nah shit was too cursed</b></p>    
+      </div>
+    </div>
+
 <!-- Footer -->
 <footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
   <p class="w3-medium">Project ECHO</p>
 </footer>
 
 <script>
-// Automatic Slideshow - change image every 4 seconds
-var myIndex = 0;
-carousel();
-
-function carousel() {
-  var i;
-  var x = document.getElementsByClassName("mySlides");
-  for (i = 0; i < x.length; i++) {
-    x[i].style.display = "none";  
-  }
-  myIndex++;
-  if (myIndex > x.length) {myIndex = 1}    
-  x[myIndex-1].style.display = "block";  
-  setTimeout(carousel, 4000);    
-}
 
 // Used to toggle the menu on small screens when clicking on the menu button
 function myFunction() {
