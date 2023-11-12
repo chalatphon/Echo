@@ -23,12 +23,12 @@
                         <ul>
                             <a href="#" class="w3-bar-item w3-button">Today</a>
                             <a href="#" class="w3-bar-item w3-button">Calendar</a>
-                            <a href="#" class="w3-bar-item w3-button">About</a>
+                            <a href="{{url_for('logout')}}" class="w3-bar-item w3-button">About</a>
                         </ul>
                     </div>
                 </div>
-                <div class="d-flex align-items-end box-absolute justify-content-end zdex">
-                    <a href="{{url_for('logout')}}" class="d-flex pe-4 sign-out">
+                <div class="d-flex align-items-end justify-content-end box-absolute">
+                    <a href="{{url_for('logout')}}" class="d-flex pe-4 sign-out" style="z-index: 1;">
                         <h3>sign out
                             <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
                             <lord-icon src="https://cdn.lordicon.com/gwvmctbb.json" trigger="loop"
