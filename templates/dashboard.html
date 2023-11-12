@@ -11,8 +11,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/dash.css">
 <style>
-body {font-family: "Lato", sans-serif}
-.mySlides {display: none}
+
 </style>
 </head>
 
@@ -22,12 +21,12 @@ body {font-family: "Lato", sans-serif}
             <div class="col-md-3 box-solid box-relative p-0 m-0">
                 <div class="d-flex box-absolute">
                     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-                        <h1 class="w3-bar-item">Menu {{data}}</h1>
-                        <h3 class="w3-bar-item ms-4">Task</h3>
+                        <h1 class="w3-bar-item" style="font-family: 'Lato', sans-serif; font-weight: 400; color: #444444;">Echo</h1>
+                        <h3 class="w3-bar-item ms-4" style="font-family: 'Lato', sans-serif; color: #444444; font-weight: 400;">Task</h3>
                         <ul>
-                            <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button" style="background-color: #d3d1d1;">Today</a>
-                            <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button">Calendar</a>
-                            <a href="{{url_for('about')}}" class="w3-bar-item w3-button">About</a>
+                            <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button" style="background-color: #d3d1d1; font-weight: 300;">Today</a>
+                            <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button" style="font-weight: 300;">Calendar</a>
+                            <a href="{{url_for('about')}}" class="w3-bar-item w3-button" style="font-weight: 300;">About</a>
                         </ul>
                     </div>
                 </div>
