@@ -25,7 +25,7 @@ def signup():
             cursor = connect.cursor()
             cursor.execute(f"insert into members(fname,lname,email,username,password) values('{fname}','{lname}','{email}','{username}','{password}')")
             connect.commit()
-            cursor.execute(f"create table {username} ('date'text,'event'text, 'status' INTEGER DEFAULT 0);")
+            cursor.execute(f"create table {username} ('date'text,'event'text, 'status' INTEGER DEFAULT 0,'title'text,'note'text);")
             connect.commit()
             connect.close()
             return redirect(url_for('signin'))
@@ -122,6 +122,21 @@ def insert():
             connect.commit()
             connect.close()
             return redirect(url_for('dashboard'))
+
+@app.route("/addnote", methods=['GET','POST'])
+def addnote():
+    if "user" in session:
+        username = session["user"]
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        title = request.form["title"]
+        note = request.form["note"]
+        cursor.execute(f"insert into {username}(title,note) values('{title}','{note}')")
+        connect.commit()
+        connect.close()
+        return redirect(url_for('note'))
+    else:
+        return redirect(url_for('signin'))
 
 if __name__ == "__main__":
     app.run(debug=True)
