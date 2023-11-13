@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>About Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {font-family: "Lato", sans-serif}
+.mySlides {display: none}
+</style>
+</head>
+<body>
+
+<!-- navigation bar -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-card">
+    <a class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right" href="javascript:void(0)" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button w3-padding-large">Dashboard</a>
+    <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Calendar</a>
+    <a href="#Profile" class="w3-bar-item w3-button w3-padding-large w3-hide-small">Profile</a>
+    <a href="javascript:void(0)" class="w3-padding-large w3-hover-red w3-hide-small w3-right"><i class="fa fa-search"></i></a>
+  </div>
+</div>
+
+<!-- navigation bar on small screens -->
+<div id="navDemo" class="w3-bar-block w3-black w3-hide w3-hide-large w3-hide-medium w3-top" style="margin-top:46px">
+  <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Dashboard</a>
+  <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button w3-padding-large" onclick="myFunction()">Calendar</a>
+</div>
+
+<!-- content -->
+<div class="w3-content" style="max-width:2000px;margin-top:46px">
+
+  <!-- about section (unfinished) -->
+  <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band">
+    <h2 class="w3-wide">About Us</h2>
+    <p class="w3-opacity"><i>Project ECHO</i></p>
+    <p class="w3-justify">Welcome to Echo, an innovative task management platform designed to streamline your workflow and enhance productivity. 
+        Echo is dedicated to providing users with a seamless and efficient way to organize their tasks, ensuring that deadlines are met and goals 
+        achieved. Our commitment to excellence is reflected in the precision and reliability of Echo's features, making it an indispensable tool for 
+        professionals and students alike. Join us on the journey to optimized productivity with Echo</p>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-half">
+        <p>Kartpol</p>
+        <img src="/static/members/kartpol.png" class="w3-round" alt="nai kartpol" style="width:40%">
+      </div>
+      <div class="w3-half">
+        <p>Sunny</p>
+        <img src="/static/members/sunny.png" class="w3-round" alt="chingchong ting song ding dong" style="width:40%">
+      </div>
+    </div>
+    <div class="w3-row w3-padding-32">
+      <div class="w3-third">
+        <p>Ton lonely</p>
+        <img src="/static/members/rizzler.png" class="w3-round" alt="Ton lonely" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Punny</p>
+        <img src="/static/members/punny.png" class="w3-round" alt="nai pun smart math pro" style="width:60%">
+      </div>
+      <div class="w3-third">
+        <p>Mark fun lek</p>
+        <img src="/static/members/markfunlek.png" class="w3-round" alt="mark fun lek" style="width:60%">
+      </div>
+    </div>
+  </div>
+
+
+<!-- Footer -->
+<footer class="w3-container w3-padding-64 w3-center w3-opacity w3-light-grey w3-xlarge">
+  <p class="w3-medium">Project ECHO</p>
+</footer>
+
+<script>
+
+// Used to toggle the menu on small screens when clicking on the menu button
+function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+  } else { 
+    x.className = x.className.replace(" w3-show", "");
+  }
+}
+
+// When the user clicks anywhere outside of the modal, close it
+var modal = document.getElementById('ticketModal');
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+</body>
+</html>
