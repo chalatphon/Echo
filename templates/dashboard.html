@@ -81,8 +81,14 @@
                     </div>
                     <div class="col-md-12">
                             {% for event in event_today %}
-                            <div class="hello mb-3" style="background-color: #fefefe8c;margin-top: 10px;margin-right: 4px; height: 50px; border-radius: 15px;padding-top: 12px;padding-left: 15px;">
-                                <h3 style="font-family: 'Inclusive Sans', sans-serif; font-weight: lighter; font-size: 20px; color: rgb(59, 59, 59);">{{event[0]}}</h3>
+                            <div class="hello mb-3 row" style="background-color: #fefefe8c;margin-top: 10px;margin-right: 4px; height: 50px; border-radius: 15px;padding-top: 12px;padding-left: 15px;">
+                                <h3 style="font-family: 'Inclusive Sans', sans-serif; font-weight: lighter; font-size: 20px; color: rgb(59, 59, 59);"> {{event[0]}}<button class="ms-4" style="border-style: none; background-color: rgba(255, 255, 255, 0);float: right;" ><script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/wpyrrmcq.json"
+                                        trigger="hover"
+                                        colors="primary:#444444"
+                                        style="width:20px;height:20px;padding-top: 3px;padding-right: 10px;">
+                                    </lord-icon></button></h3>
                             </div>
                             {% endfor %}
                     </div>
