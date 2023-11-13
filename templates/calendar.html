@@ -26,7 +26,7 @@
                         <h1 class="w3-bar-item" style="font-family: 'Lato', sans-serif; font-weight: 500; color: #444444;">Echo</h1>
                         <h3 class="w3-bar-item ms-4" style="font-family: 'Lato', sans-serif; color: #444444; font-weight: 500;">Task</h3>
                         <ul>
-                            <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button" style="font-weight: 300;">
+                            <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button">
                                 <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
                                 <lord-icon
                                     src="https://cdn.lordicon.com/vdjwmfqs.json"
@@ -72,26 +72,27 @@
                     </a>
                 </div>
             </div>
-
-            <div style="padding-left: 480px;">
+            <div class="continer-fluid col-md-9 p-0" style="z-index: 1;">
                 <div id="calendar"></div>
-            <script>
-                let calendarEl = document.getElementById('calendar');
-        
-                let calendar = new FullCalendar.Calendar(calendarEl, {
-                    events : [
-                    {% for event in events %}
-                    {
-                        start : '{{event[0]}}',
-                        title : '{{event[1]}}',
-                    },
-                    {% endfor %}
-                    ]
-                });
-        
-                calendar.render();
-            </script>
+    <script>
+        let calendarEl = document.getElementById('calendar');
+
+        let calendar = new FullCalendar.Calendar(calendarEl, {
+            events : [
+            {% for event in events %}
+            {
+                start : '{{event[0]}}',
+                title : '{{event[1]}}',
+            },
+            {% endfor %}
+            ]
+        });
+
+        calendar.render();
+    </script>
             </div>
+        </div>
+    </div>
 </body>
 
 </html>

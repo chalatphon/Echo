@@ -23,50 +23,44 @@
 
 <body>
     <div class="container-fluid p-0">
-        <div class="overlay7">
-            <video autoplay muted loop class="video-bg">
-                <source src="../static/pexels_videos_1918465 (2160p).mp4" type="video/mp4">
-            </video>
-        </div>
         <div class="row box">
             <div class="col-md-3 box-solid box-relative p-0 m-0">
                 <div class="d-flex box-absolute">
                     <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
-                        <h1 class="w3-bar-item" style="font-family: 'Lato', sans-serif; font-weight: 500; color: #444444;">Echo</h1>
-                        <h3 class="w3-bar-item ms-4" style="font-family: 'Lato', sans-serif; color: #444444; font-weight: 500;">Task</h3>
+                        <h1 class="w3-bar-item"
+                            style="font-family: 'Lato', sans-serif; font-weight: 500; color: #444444;">Echo</h1>
+                        <h3 class="w3-bar-item ms-4"
+                            style="font-family: 'Lato', sans-serif; color: #444444; font-weight: 500;">Task</h3>
                         <ul>
                             <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button" style="font-weight: 300">
                                 <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/vdjwmfqs.json"
-                                    trigger="hover"
+                                <lord-icon src="https://cdn.lordicon.com/vdjwmfqs.json" trigger="hover"
                                     colors="primary:#444444"
                                     style="width:20px;height:20px; padding-top: 3px; padding-right: 30px;">
-                                </lord-icon>Today</a>
+                                </lord-icon>Today
+                            </a>
                             <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button" style="font-weight: 300;">
                                 <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/eouimtlu.json"
-                                    trigger="hover"
+                                <lord-icon src="https://cdn.lordicon.com/eouimtlu.json" trigger="hover"
                                     colors="primary:#444444"
                                     style="width:20px;height:20px; padding-top: 3px; padding-right: 30px;">
-                                </lord-icon>Calendar</a>
-                            <a href="{{url_for('note')}}" class="w3-bar-item w3-button" style="background-color: #d3d1d1; font-weight: 300;">
+                                </lord-icon>Calendar
+                            </a>
+                            <a href="{{url_for('note')}}" class="w3-bar-item w3-button"
+                                style="background-color: #d3d1d1; font-weight: 300;">
                                 <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/zyzoecaw.json"
-                                    trigger="hover"
+                                <lord-icon src="https://cdn.lordicon.com/zyzoecaw.json" trigger="hover"
                                     colors="primary:#444444"
                                     style="width:20px;height:20px; padding-top: 3px; padding-right: 30px;">
-                                </lord-icon>Note</a>
+                                </lord-icon>Note
+                            </a>
                             <a href="{{url_for('about')}}" class="w3-bar-item w3-button" style="font-weight: 300;">
                                 <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
-                                <lord-icon
-                                    src="https://cdn.lordicon.com/lyrrgrsl.json"
-                                    trigger="hover"
+                                <lord-icon src="https://cdn.lordicon.com/lyrrgrsl.json" trigger="hover"
                                     colors="primary:#444444"
                                     style="width:20px;height:20px; padding-top: 3px; padding-right: 30px;">
-                                </lord-icon>About</a>
+                                </lord-icon>About
+                            </a>
                         </ul>
                     </div>
                 </div>
@@ -82,16 +76,35 @@
                 </div>
             </div>
             <div class="continer-fluid col-md-9 p-0">
+                <h1>Note</h1>
                 <div class="col-md-12 row">
-                    <h1>Note</h1>
-                    <div class="col-md-4" style="height: 500px;">
+                    <div class="col-md-4" style="height: 500px;" id="total">
                         <h3>hello</h3>
                     </div>
-                    <a href="https://www.youtube.com/" class="col-md-4 text-center">
+                    <button onclick="myFunction1()" class="col-md-4 text-center" style="z-index: 1;" id="total1">
                         <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
                         <i class="fa-regular fa-star"></i>
                         <h3 class="text-center">add more</h3>
-                    </a>
+                    </button>
+                </div>
+                <div id="note" class="mt-3 p-3 col-md-8" style="display: none; background-color: #fefefe; border-radius:15px ;">
+                    <h3 style="color: black;">Add note</h3>
+                    <form action="{{url_for('insert')}}" method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1" style='z-index: 1; color: black;'>Title</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                            placeholder="Enter email" name="title">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1" style='z-index: 1; color: black;'>Note</label>
+                            <input type="text" class="form-control" id="exampleInputPassword1" name="note">
+                        </div>
+                        <button type="submit" class="btn btn-success mt-3">Submit</button>
+                    </form>
+                    <button onclick="myFunction1()" class="btn mt-3" style="border: solid; padding: auto;">Get back <script src="https://cdn.lordicon.com/lordicon-1.1.0.js"></script>
+                        <lord-icon src="https://cdn.lordicon.com/gwvmctbb.json" trigger="loop"
+                            style="width:30px;height:30px" class="pt-2" delay="2000">
+                        </lord-icon></button>
                 </div>
             </div>
         </div>
@@ -101,5 +114,20 @@
         </script>
     <script src="https://kit.fontawesome.com/0d8181b8a6.js" crossorigin="anonymous"></script>
 </body>
+<script>
+    function myFunction1() {
+        var note = document.getElementById("note");
+        if (note.style.display === "none") {
+            note.style.display = "block";
+            total.style.display = "none";
+            total1.style.display = "none";
+
+        } else {
+            note.style.display = "none";
+            total.style.display = "block";
+            total1.style.display = "block";
+        }
+    }
+</script>
 
 </html>
