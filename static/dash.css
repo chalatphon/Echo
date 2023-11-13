@@ -8,6 +8,10 @@ body{
     height: 100vh;
 
 }
+.box1{
+    height: 1vh;
+
+}
 .box-relative{
     position: relative;
     
@@ -16,6 +20,11 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
+}
+.box-absolute1{
+    position: absolute;
+    width: 100%;
+    height: 59%;
 }
 .check{
     border-style:solid ;
