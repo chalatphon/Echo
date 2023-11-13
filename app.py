@@ -1,5 +1,6 @@
 from flask import Flask,render_template,request,redirect,url_for,session
 import sqlite3
+from datetime import date
 
 app = Flask(__name__)
 app.secret_key = "hello"
@@ -55,7 +56,12 @@ def signin():
 def dashboard():
     if "user" in session:
         username = session["user"]
-        return render_template('dashboard.html',data=username)
+        connection = sqlite3.connect('echo.db')
+        cursor = connection.cursor()
+        today = date.today()
+        cursor.execute(f"select event from {username} where date ='{today}'")
+        event_today = cursor.fetchall()
+        return render_template('dashboard.html', event_today=event_today)
     else:
         return redirect(url_for('signin'))
 
