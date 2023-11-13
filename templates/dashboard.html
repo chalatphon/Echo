@@ -17,11 +17,6 @@
 
 <body>
     <div class="container-fluid p-0">
-        <div class="overlay7">
-            <video autoplay muted loop class="video-bg">
-                <source src="../static/pexels_videos_1918465 (2160p).mp4" type="video/mp4">
-            </video>
-        </div>
         <div class="row box">
             <div class="col-md-3 box-solid box-relative p-0 m-0">
                 <div class="d-flex box-absolute">
@@ -75,12 +70,8 @@
                     </a>
                 </div>
             </div>
-            <div class="continer-fluid col-md-9 p-0" style="z-index: 1;">
+            <div class="continer-fluid col-md-9 p-0 img-background">
                 <div class="col-md-12 row ms-1 ">
-                    <div class="col-md-12 w-100 ms-1 p-0 t">
-                        <button class="bar btn-A ">50%</button>
-                    </div>
-                    
                     <div class="col-md-8 ms-1">
                         <h2 class=" mt-5" style='z-index: 1; color: black;'>Today</h2>
                     </div>
@@ -126,14 +117,6 @@
 
 </body>
 <script>
-    function myFunction() {
-        var routine = document.getElementById("routine");
-        if (routine.style.display === "none") {
-            routine.style.display = "block";
-        } else {
-            routine.style.display = "none";
-        }
-    }
     function myFunction1() {
         var event = document.getElementById("event");
         if (event.style.display === "none") {
