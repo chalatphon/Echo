@@ -81,9 +81,12 @@
             <div class="continer-fluid col-md-9 p-0">
                 <h1>Note</h1>
                 <div class="col-md-12 row">
-                    <div class="col-md-4" style="height: 500px;" id="total">
-                        <h3>hello</h3>
+                    {% for note in all_note %}
+                    <div class="col-md-4" style="height: 500px; border: solid;" id="total">
+                        <h3>{{note[0]}}</h3>
+                        <h5>{{note[1]}}</h5>
                     </div>
+                    {% endfor %}
                     <button onclick="myFunction1()" class="col-md-4 text-center" style="z-index: 1;" id="total1">
                         <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
                         <i class="fa-regular fa-star"></i>

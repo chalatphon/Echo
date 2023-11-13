@@ -19,14 +19,16 @@ def signup():
         username = request.form['username']
         password = request.form['password']
         c_password = request.form['c_password']
+        notetable = "note"+ username
         # เก็บใน databaase
         if password == c_password:
             connect = sqlite3.connect('echo.db')
             cursor = connect.cursor()
             cursor.execute(f"insert into members(fname,lname,email,username,password) values('{fname}','{lname}','{email}','{username}','{password}')")
             connect.commit()
-            cursor.execute(f"create table {username} ('date'text,'event'text, 'status' INTEGER DEFAULT 0,'title'text,'note'text);")
+            cursor.execute(f"create table {username} ('date'text,'event'text, 'status' INTEGER DEFAULT 0);")
             connect.commit()
+            cursor.execute(f"create table {notetable} ('title'text,'note'text)")
             connect.close()
             return redirect(url_for('signin'))
         # else --> ถ้าเกิด password กับ confirm-password ไม่ตรงกันให้ทำอะไร
@@ -104,7 +106,12 @@ def about():
 def note():
     if "user" in session:
         username = session["user"]
-        return render_template("note.html")
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        notetable = "note"+ username
+        cursor.execute(f"select title,note from '{notetable}'")
+        all_note = cursor.fetchall()
+        return render_template("note.html",all_note=all_note)
     else:
         return redirect(url_for('signin'))
 
@@ -127,11 +134,12 @@ def insert():
 def addnote():
     if "user" in session:
         username = session["user"]
+        notetable = "note"+ username
         connect = sqlite3.connect('echo.db')
         cursor = connect.cursor()
         title = request.form["title"]
         note = request.form["note"]
-        cursor.execute(f"insert into {username}(title,note) values('{title}','{note}')")
+        cursor.execute(f"insert into {notetable}(title,note) values('{title}','{note}')")
         connect.commit()
         connect.close()
         return redirect(url_for('note'))
