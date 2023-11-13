@@ -145,6 +145,14 @@ def addnote():
         return redirect(url_for('note'))
     else:
         return redirect(url_for('signin'))
+    
+@app.route("/profile")
+def profile():
+    if "user" in session:
+        username = session["user"]
+        return render_template("profile.html")
+    else:
+        return redirect(url_for('signin'))
 
 if __name__ == "__main__":
     app.run(debug=True)
