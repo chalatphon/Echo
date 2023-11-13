@@ -94,6 +94,15 @@ def about():
     else:
         return redirect(url_for('signin'))
 
+@app.route("/note")
+def note():
+    if "user" in session:
+        username = session["user"]
+        return render_template("note.html")
+    else:
+        return redirect(url_for('signin'))
+
+
 @app.route("/insert", methods=['GET','POST'])
 def insert():
     if "user" in session:
