@@ -30,10 +30,10 @@
                         <h1 class="w3-bar-item">Menu {{data}}</h1>
                         <h3 class="w3-bar-item ms-4">Task</h3>
                         <ul>
-                            <a href="#" class="w3-bar-item w3-button">Today</a>
-                            <a href="#" class="w3-bar-item w3-button">Calendar</a>
+                            <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button">Today</a>
+                            <a href="{{url_for('calendar')}}" class="w3-bar-item w3-button">Calendar</a>
                             <a href="{{url_for('about')}}" class="w3-bar-item w3-button">About</a>
-                            <a href="{{url_for('about')}}" class="w3-bar-item w3-button"
+                            <a href="{{url_for('note')}}" class="w3-bar-item w3-button"
                                 style="background-color: #d3d1d1;">Note</a>
                         </ul>
                     </div>
