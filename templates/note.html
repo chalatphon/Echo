@@ -91,8 +91,17 @@
                 <div class="col-md-12 row" style="padding-left: 20px;">
                     {% for note in all_note %}
                     <div class="col-md-4" style="height: 500px; border-style: outset;border-color: bisque; border-radius: 10px;margin: 5px;border-width: 1px; background-color: beige;" id="total">
+                        <button type="button" style="float: right;border-style: none;background-color: #44444400;">
+                            <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
+                            <lord-icon
+                                src="https://cdn.lordicon.com/wpyrrmcq.json"
+                                trigger="hover"
+                                colors="primary:#444444"
+                                style="width:30px;height:30px">
+                            </lord-icon></button>
                         <h3>{{note[0]}}</h3>
                         <h5>{{note[1]}}</h5>
+                        
                     </div>
                     {% endfor %}
                     <button onclick="myFunction1()" class="col-md-4 text-center" style="z-index: 1;" id="total1">
