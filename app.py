@@ -154,5 +154,17 @@ def profile():
     else:
         return redirect(url_for('signin'))
 
+@app.route("/delete", methods=['POST'])
+def delete():
+    if "user" in session:
+        username = session["user"]
+        want_delete = request.json.get('myString')
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        cursor.execute(f"delete from '{username}' where event = '{want_delete}'")
+        connect.commit()
+        connect.close()
+        return redirect(url_for('dashboard'))
+
 if __name__ == "__main__":
     app.run(debug=True)
