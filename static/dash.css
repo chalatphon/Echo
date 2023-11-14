@@ -1,14 +1,15 @@
 body{
     font-family: "Lato", sans-serif;
-    font-weight: 400;
+    font-weight: lighter;
     font-size: 16px;
-    color: #808080;
+    color: #000000;
+    overflow-x: hidden;
 }
 .box{
     height: 100vh;
 
 }
-.box1{
+.box2{
     height: 1vh;
 
 }
@@ -20,16 +21,17 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
+
 }
 .box-absolute1{
     position: absolute;
-    width: 100%;
-    height: 59%;
+    width: 98%;
+    height: 58%;
+
 }
 .check{
     border-style:solid ;
 }
-
 
 .bar{
     height: 50px;
@@ -56,6 +58,8 @@ body{
 }
 .sign-out{
     text-decoration: none;
+    font-family: "Lato", sans-serif;
+    font-weight: light;
     color: #3a3a3a;
 }
 .overlay7{
@@ -67,7 +71,7 @@ body{
     position: fixed;
     right: 0;
     bottom: 0;
-    min-width: 100%; 
+    min-width: 100%;
     min-height: 100%;
     filter: blur(8px);
     z-index: -1;

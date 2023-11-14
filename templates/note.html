@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>note</title>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/dash.css">
@@ -26,9 +25,9 @@
         <div class="row box">
             <div class="col-md-3 box-solid box-relative p-0 m-0">
                 <div class="d-flex box-absolute">
-                    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%">
+                    <div class="w3-sidebar w3-light-grey w3-bar-block" style="width:25%;overflow-x: hidden;">
                         <h1 class="w3-bar-item" style="font-family: 'Lato', sans-serif; font-weight: 400;font-size: 50px; color: #444444;">Echo</h1>
-                        <h3 class="w3-bar-item ms-4" style="font-family: 'Lato', sans-serif; color: #444444; font-weight: 500;">Task</h3>
+                        <h3 class="w3-bar-item ms-4" style="color: #444444; font-weight: 500;">Task</h3>
                         <ul>
                             <a href="{{url_for('dashboard')}}" class="w3-bar-item w3-button" style="font-weight: 300;">
                                 <script src="https://cdn.lordicon.com/lordicon-1.2.0.js"></script>
@@ -87,9 +86,9 @@
                     </a>
                 </div>
             </div>
-            <div class="continer-fluid col-md-9 p-0">
+            <div class="continer-fluid col-md-9 p-0 img-background">
                 <h1>Note</h1>
-                <div class="col-md-12 row">
+                <div class="col-md-12 row" style="padding-left: 20px;">
                     {% for note in all_note %}
                     <div class="col-md-4" style="height: 500px; border-style: outset;border-color: bisque; border-radius: 10px;margin: 5px;border-width: 1px; background-color: beige;" id="total">
                         <h3>{{note[0]}}</h3>
