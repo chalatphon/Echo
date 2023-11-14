@@ -27,8 +27,8 @@ input:focus, textarea:focus, button:focus {
 }
 .evo-calendar {
     position: relative;
-    background-color: #fbfbfb;
-    color: #5a5a5a;
+    background-color: #08080846;
+    color: #0e0d0d;
     width: 100%;
     -webkit-box-shadow: 0 10px 50px -20px #8773c1;
             box-shadow: 0 10px 50px -20px #8773c1;
