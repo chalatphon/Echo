@@ -31,7 +31,7 @@ def signup():
             cursor.execute(f"create table {notetable} ('title'text,'note'text)")
             connect.close()
             return redirect(url_for('signin'))
-        # else --> ถ้าเกิด password กับ confirm-password ไม่ตรงกันให้ทำอะไร
+        # else:
     return render_template('signup.html')
 
 @app.route("/signin", methods=['GET','POST'])
@@ -63,7 +63,8 @@ def dashboard():
         today = date.today()
         cursor.execute(f"select event from {username} where date ='{today}'")
         event_today = cursor.fetchall()
-        return render_template('dashboard.html', event_today=event_today)
+        count_event = len(event_today)
+        return render_template('dashboard.html', event_today=event_today,count_event=count_event)
     else:
         return redirect(url_for('signin'))
 
@@ -150,12 +151,16 @@ def addnote():
 def profile():
     if "user" in session:
         username = session["user"]
-        return render_template("profile.html")
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        cursor.execute(f"select fname,lname,email,username from members where username = '{username}'")
+        all_profile = cursor.fetchall()
+        return render_template("profile.html",all_profile=all_profile)
     else:
         return redirect(url_for('signin'))
 
-@app.route("/delete", methods=['POST'])
-def delete():
+@app.route("/delete_event", methods=['POST'])
+def delete_event():
     if "user" in session:
         username = session["user"]
         want_delete = request.json.get('myString')
@@ -164,6 +169,18 @@ def delete():
         cursor.execute(f"delete from '{username}' where event = '{want_delete}'")
         connect.commit()
         connect.close()
+        return redirect(url_for('dashboard'))
+    
+@app.route("/delete_note", methods=['POST'])
+def delete_note():
+    if "user" in session:
+        username = session["user"]
+        want_delete = request.json.get('myString')
+        notetable = "note"+ username
+        connect = sqlite3.connect('echo.db')
+        cursor = connect.cursor()
+        cursor.execute(f"delete from '{notetable}' where title = '{want_delete}'")
+        connect.commit()
         return redirect(url_for('dashboard'))
 
 if __name__ == "__main__":
