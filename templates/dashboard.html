@@ -87,9 +87,11 @@
                     <div class="col-md-8 ms-1">
                         <h2 class=" mt-5" style='z-index: 1; color: black;'>Today's Task</h2>
                     </div>
-                    <div class="col-md-12">
+                    <div class="col-md-11">
                         {% if count_event == 0 %}
-                        <h1> No event </h1>
+                        <div class="hello mb-3 row" style="background-color: #fefefe8c;margin-top: 10px;margin-right: 4px; height: 50px; border-radius: 15px;padding-top: 12px;padding-left: 15px;">
+                            <h3 style="font-family: 'Inclusive Sans', sans-serif; font-weight: lighter; font-size: 20px; color: rgb(59, 59, 59);"> No event for today </h3>
+                        </div>
                         {% else %} 
                         {% for event in event_today %}
                         <div class="hello mb-3 row" style="background-color: #fefefe8c;margin-top: 10px;margin-right: 4px; height: 50px; border-radius: 15px;padding-top: 12px;padding-left: 15px;">
